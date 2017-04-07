@@ -13,9 +13,10 @@ app.get('/host', function(req, res){
 app.use('/static', express.static(__dirname))
 
 io.on('connection', function(socket){
+	socket.userID = null
 	console.log('a user connected')
 	socket.on('disconnect', function(){
-		console.log('user disconnected')
+		socket.broadcast.emit('drop',socket.userID)
 	})
 	socket.on('tip', function(args){
 		console.log('user tipped')
@@ -24,6 +25,7 @@ io.on('connection', function(socket){
 	socket.on('setup', function(args){
 		console.log('user requesting setup')
 		socket.broadcast.emit('setup',args)
+		socket.userID = args.id
 	})
 })
 

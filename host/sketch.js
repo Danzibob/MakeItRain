@@ -8,12 +8,16 @@ function setup(){
 	socket = io();
 	socket.on('tip', function(args){
 		console.log("tipped",args.vel,args.pos)
-    	tip(args.vel,args.pos)
-    });
-    socket.on('setup', function(args){
-    	console.log("New user added")
+		tip(args.vel,args.pos)
+	})
+	socket.on('setup', function(args){
+		console.log("New user added")
 		users[args.id] = {pos: args.pos*(width-50) +50,col:args.col}
-    });
+	})
+	socket.on('drop', function(id){
+		console.log("User dropped")
+		delete users[id]
+	})
 }
 
 function draw(){
