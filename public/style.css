@@ -1,0 +1,25 @@
+body{
+	overflow-y: hidden;
+	margin: 0px;
+}
+
+#pile,#bill{
+	background-image: url("Bill.jpeg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 90vw;
+	height:200vh;
+	margin: auto;
+	user-select: none;
+}
+
+#pile{
+	cursor: none;
+}
+
+#bill{
+	position:relative;
+	top:0px;
+	left:0px;
+	cursor: pointer;
+}

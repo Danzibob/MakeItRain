@@ -21,6 +21,10 @@ io.on('connection', function(socket){
 		console.log('user tipped')
 		socket.broadcast.emit('tip',args)
 	})
+	socket.on('setup', function(args){
+		console.log('user requesting setup')
+		socket.broadcast.emit('setup',args)
+	})
 })
 
 http.listen(3000, function(){

@@ -1,15 +1,18 @@
 <!doctype html>
 <html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
 <script src="static/public/sketch.js"></script>
+<link rel="stylesheet" type="text/css" href="static/public/style.css">
 <script>
 	var socket = io();
 </script>
 	<head>
 		<title>StripperTipper</title>
 	</head>
-	<body onclick="speed=-40;tip()">
-		<h1>client</h1>
+	<body>
+		<div id="pile">
+			<div id="bill"></div>
+		</div>
 	</body>
 </html>
